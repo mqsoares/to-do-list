@@ -6,23 +6,14 @@ const submit = document.querySelector("#submit");
 const tasks = document.querySelector("#tasks");
 
 for(let option of options) {
-    option.addEventListener('click', function() {
-        let isChecked;
-        
-        if(option.checked){
-            isChecked = option.value;
-        }
-        toggleInputs();
-    })    
+    option.addEventListener('click', toggleInputs);    
 }
 
 function toggleInputs() {
     if(remove.checked) {
         inputs.style.display = "none"
-        console.log('teste1')
     } else {
         inputs.style.display = "block"
-        console.log('teste2')
     }
 }
 
