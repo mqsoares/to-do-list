@@ -1,10 +1,33 @@
 const options = document.querySelectorAll("input[name='option']");
+const remove = document.querySelector("#remove");
+const inputs = document.querySelector("#inputs");
 const txtInput = document.querySelector("#taskInput");
 const submit = document.querySelector("#submit");
 const tasks = document.querySelector("#tasks");
 
+for(let option of options) {
+    option.addEventListener('click', function() {
+        let isChecked;
+        
+        if(option.checked){
+            isChecked = option.value;
+        }
+        toggleInputs();
+    })    
+}
+
+function toggleInputs() {
+    if(remove.checked) {
+        inputs.style.display = "none"
+        console.log('teste1')
+    } else {
+        inputs.style.display = "block"
+        console.log('teste2')
+    }
+}
+
 submit.addEventListener('click', () => {
-    if (txtInput.value.length > 0 && check() == "add") {
+    if (txtInput.value.length > 0) {
         const div = document.createElement("div");
         const check = document.createElement("input");
         const itemList = document.createElement("label");
@@ -18,17 +41,5 @@ submit.addEventListener('click', () => {
         div.appendChild(check);
         div.appendChild(itemList);
         txtInput.value = '';
-    } else {
-        alert('Você precisa alguma coisa!')
     }
 });
-
-function check() {
-    let isChecked;
-    for(option of options) {
-        if(option.checked){
-            isChecked = option.value;
-        }
-    }
-    return isChecked;
-}
