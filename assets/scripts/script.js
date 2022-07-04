@@ -8,13 +8,10 @@ const tag = document.querySelector(".tag");
 
 
 for(let option of options) {
-
-    option.addEventListener('click', toggleInputs);   
-
+    option.addEventListener('click', toggleInputs);
 }
 
 function toggleInputs() {
-
     if(remove.checked) {
         inputs.style.display = "none";
         tag.textContent = 'Clique duplo para remover.'
@@ -22,11 +19,9 @@ function toggleInputs() {
         inputs.style.display = "block";
         tag.textContent = 'Clique duplo para marcar como feito.'
     }
-
 }
 
-submit.addEventListener('click', () => {
-
+function createItem() {
     if (txtInput.value.length > 0) {
         const itemList = document.createElement("li");
         itemList.textContent = txtInput.value;
@@ -34,17 +29,17 @@ submit.addEventListener('click', () => {
         ulTasks.appendChild(itemList);
         txtInput.value = '';
     }
+}
 
-})
-
-ulTasks.addEventListener('dblclick', function(e) {    
-
-    let test = e.target;
-    
+function doneRemoveItem(e) {
+    let test = e.target;    
     if(remove.checked) {
         e.target.remove();
     } else {
         test.classList.toggle("done") 
     }
+}
 
-})
+submit.addEventListener('click', createItem);
+
+ulTasks.addEventListener('dblclick', doneRemoveItem);
