@@ -11,13 +11,16 @@
     <main>
         <h5 class="subtitle">Selecione o que deseja fazer:</h5>
         <section class="options">
-            <input type="radio" id="add"
-            name="option" value="add" checked>
-            <label for="add">Adicionar</label>
-        
-            <input type="radio" id="remove"
-                name="option" value="rem" >
-            <label for="remove">Remover</label>
+            <div>
+                <input type="radio" id="add"
+                name="option" value="add" checked>
+                <label for="add">Adicionar</label>
+            </div>
+            <div>
+                <input type="radio" id="remove"
+                    name="option" value="rem" >
+                <label for="remove">Remover</label>
+            </div>
         </section>       
         <section id="inputs">
             <input id="taskInput" name="task" type="text" placeholder="Digite sua tarefa"/>
@@ -28,7 +31,6 @@
         </section>
         <section >
             <ul id="tasks">
-
             </ul>
         </section>
         </main>
