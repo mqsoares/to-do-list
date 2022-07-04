@@ -3,34 +3,48 @@ const remove = document.querySelector("#remove");
 const inputs = document.querySelector("#inputs");
 const txtInput = document.querySelector("#taskInput");
 const submit = document.querySelector("#submit");
-const tasks = document.querySelector("#tasks");
+const ulTasks = document.querySelector("#tasks");
+const tag = document.querySelector(".tag");
+
 
 for(let option of options) {
-    option.addEventListener('click', toggleInputs);    
+
+    option.addEventListener('click', toggleInputs);   
+
 }
 
 function toggleInputs() {
+
     if(remove.checked) {
-        inputs.style.display = "none"
+        inputs.style.display = "none";
+        tag.textContent = 'Clique duplo para remover.'
     } else {
-        inputs.style.display = "block"
+        inputs.style.display = "block";
+        tag.textContent = 'Clique duplo para marcar como feito.'
     }
+
 }
 
 submit.addEventListener('click', () => {
+
     if (txtInput.value.length > 0) {
-        const div = document.createElement("div");
-        const check = document.createElement("input");
-        const itemList = document.createElement("label");
-
-        check.type = "checkbox";
-
+        const itemList = document.createElement("li");
         itemList.textContent = txtInput.value;
-        itemList.classList.add("labelItemList");
-
-        tasks.appendChild(div);
-        div.appendChild(check);
-        div.appendChild(itemList);
+        itemList.setAttribute("class", "liItem");
+        ulTasks.appendChild(itemList);
         txtInput.value = '';
     }
-});
+
+})
+
+ulTasks.addEventListener('dblclick', function(e) {    
+
+    let test = e.target;
+    
+    if(remove.checked) {
+        e.target.remove();
+    } else {
+        test.classList.toggle("done") 
+    }
+
+})
