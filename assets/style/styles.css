@@ -26,14 +26,24 @@ li {
   margin: 5px 0;
 }
 
-button {
+li::selection {
+  background-color: #fff;
+}
+
+#submit {
   border: 1px solid #69c5ff;
   border-radius: 5px;
   background-color: #e3f8ff;
   color: #69c5ff;
   text-align: center;
+  font-size: 18px;
   padding: 10px;
   cursor: pointer;
+  transition: .2s;
+}
+
+#submit:hover {
+  background-color: #0070b5;
 }
 
 input[type="text"] {
