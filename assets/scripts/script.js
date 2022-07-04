@@ -12,6 +12,7 @@ for(let option of options) {
 }
 
 function toggleInputs() {
+
     if(remove.checked) {
         inputs.style.display = "none";
         tag.textContent = 'Clique duplo para remover.'
@@ -19,9 +20,11 @@ function toggleInputs() {
         inputs.style.display = "block";
         tag.textContent = 'Clique duplo para marcar como feito.'
     }
+
 }
 
 function createItem() {
+
     if (txtInput.value.length > 0) {
         const itemList = document.createElement("li");
         itemList.textContent = txtInput.value;
@@ -29,15 +32,19 @@ function createItem() {
         ulTasks.appendChild(itemList);
         txtInput.value = '';
     }
+
 }
 
 function doneRemoveItem(e) {
+
     let test = e.target;    
+
     if(remove.checked) {
         e.target.remove();
     } else {
         test.classList.toggle("done") 
     }
+    
 }
 
 submit.addEventListener('click', createItem);
