@@ -14,12 +14,16 @@ body {
 
 h1 {
   margin: 20px 0;
+  text-align: center;
 }
 
 .options {
   font-size: 24px;
   text-align: center;
   margin: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 li {
@@ -53,6 +57,11 @@ input[type="text"] {
   border: 1px solid black;
 }
 
+input[type=radio] {
+  width: 19px;
+  height: 19px;
+}
+
 .tag {
   text-align: center;
   font-size: 15px;
@@ -62,4 +71,37 @@ input[type="text"] {
 ul li.done {
   text-decoration: line-through;
   color: grey;
+}
+
+@media (max-width: 480px) {
+
+  body {
+    font-size: 28px;
+  }
+
+  .options {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+
+  body {
+    font-size: 24px;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  .options {
+    font-size: 16px;
+  }
+
+  #inputs {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
