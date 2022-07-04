@@ -9,7 +9,7 @@
 <body>
     <h1>Lista de Tarefas</h1>
     <main>
-        <p>Selecione o que deseja fazer:</p>
+        <h5 class="subtitle">Selecione o que deseja fazer:</h5>
         <section class="options">
             <input type="radio" id="add"
             name="option" value="add" checked>
@@ -17,14 +17,19 @@
         
             <input type="radio" id="remove"
                 name="option" value="rem" >
-            <label for="rem">Remover</label>
-        </section>
+            <label for="remove">Remover</label>
+        </section>       
         <section id="inputs">
             <input id="taskInput" name="task" type="text" placeholder="Digite sua tarefa"/>
             <button id="submit" type="submit">Adicionar</button>
         </section>
-        <section id="tasks">
-            
+        <section class="secTag">
+            <p class="tag">Clique duplo para marcar como feito.</p>
+        </section>
+        <section >
+            <ul id="tasks">
+
+            </ul>
         </section>
         </main>
     <script src="./assets/scripts/script.js"></script>
