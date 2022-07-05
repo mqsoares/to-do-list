@@ -2,17 +2,14 @@ const options = document.querySelectorAll("input[name='option']");
 const remove = document.querySelector("#remove");
 const inputs = document.querySelector("#inputs");
 const txtInput = document.querySelector("#taskInput");
-const submit = document.querySelector("#submit");
 const ulTasks = document.querySelector("#tasks");
 const tag = document.querySelector(".tag");
-
 
 for(let option of options) {
     option.addEventListener('click', toggleInputs);
 }
 
 function toggleInputs() {
-
     if(remove.checked) {
         inputs.style.display = "none";
         tag.textContent = 'Clique duplo para remover.'
@@ -20,11 +17,9 @@ function toggleInputs() {
         inputs.style.display = "block";
         tag.textContent = 'Clique duplo para marcar como feito.'
     }
-
 }
 
 function createItem() {
-
     if (txtInput.value.length > 0) {
         const itemList = document.createElement("li");
         itemList.textContent = txtInput.value;
@@ -32,21 +27,20 @@ function createItem() {
         ulTasks.appendChild(itemList);
         txtInput.value = '';
     }
-
 }
 
 function doneRemoveItem(e) {
-
-    let test = e.target;    
-
+    let item = e.target;    
     if(remove.checked) {
         e.target.remove();
     } else {
-        test.classList.toggle("done") 
+        item.classList.toggle("done") 
     }
-    
 }
 
-submit.addEventListener('click', createItem);
+inputs.addEventListener('submit', (e) => {
+    e.preventDefault();
+    createItem()
+})
 
 ulTasks.addEventListener('dblclick', doneRemoveItem);
