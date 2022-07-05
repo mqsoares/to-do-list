@@ -23,9 +23,9 @@
 
 ## :clipboard: Sobre o Projeto
 To-do List / Lista de Tarefas
-- Add item a Lista
-- Marcar item como feito com clique duplo
-- Remover item, acionando a aba remover e clique duplo no item
+- 'Add' item a Lista
+- Marcar item como 'Feito' com clique duplo
+- Remover item, acionando a aba 'Remover' e clique duplo no item
 
 ## :computer: Tecnologias utilizadas
 - HTML
